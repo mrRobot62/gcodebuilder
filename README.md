@@ -1,5 +1,18 @@
 # GCodeGenerator2 / GCode-Builder
- unde
+ !!!!! under construction !!!!
+ 
+ Initial version (V01) generate GCode for  
+ * milling contour circels
+ * milling contour circel arcs
+ * milling rectangles
+ 
+ #History
+ | Date | Version | Info |
+ | :-: | :-: | --- |
+ |15 dec 2021| 0.1 | Initial upload |
+ ||||
+ ||||
+ 
  # Abstract
 This web based tool suite create a couple of different gcode squences like
 * Contour-Tools
