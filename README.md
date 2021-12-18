@@ -2,6 +2,7 @@
  !!!!! under construction !!!!
  
  Initial version (V01) generate GCode for  
+ * Language English/German
  * milling contour circels
  * milling contour circel arcs
  * milling rectangles
@@ -31,7 +32,17 @@ This web based tool suite create a couple of different gcode squences like
 ## Quick Overview
 some screenshots
 
+### Overview
 []<img width="1437" alt="overview1" src="https://user-images.githubusercontent.com/949032/146629773-8bb1376d-4f1f-4eed-8d5c-85e725da2468.png">
+
+### Contour milling
+<img width="1437" alt="overview_contour" src="https://user-images.githubusercontent.com/949032/146629823-0e739bea-b456-489a-9e13-7b5b233c4967.png">
+
+### Contour Circles
+<img width="1437" alt="overview_contour_circle" src="https://user-images.githubusercontent.com/949032/146629834-dcc60088-8a33-415e-a087-e34aa462993d.png">
+
+### Generated GCode
+<img width="1437" alt="overview_gcode" src="https://user-images.githubusercontent.com/949032/146629846-98f356c7-69ee-4a1c-8c75-ae19af0e32aa.png">
 
 
 ## Deepe Dive
