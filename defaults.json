@@ -1,0 +1,24 @@
+{
+   
+    "pre_gcode" : "G90 G64 G17 G40 G49",
+    "post_gcode" : "M5 M9 M2",
+    "cp" : {"0":false, "1": true},
+    "unit" : {"mm":true, "inch":false},
+    "dir" : {"CCW":false, "CW":true},
+    "cooling": {"Off": true, "Cooloing mist": false, "Cooling flood": false},
+    "move" : {"on contour":0, "outside contour":1, "inside contour":2},
+    "feed_g00_xy" : 600,
+    "feed_g00_z" : 400,
+    "feed_g01_xy" : 300,
+    "feed_g01_z" : 150,
+    "z_start" : 3.0,
+    "z_safety" : 15.0,
+    "diameter" : 10.0,
+    "tool_id" : 1,
+    "speed" : 12000,
+    "depth_step" : 0.5,
+    "depth_total" : 2.2,
+    "start_point" : "1",
+    "tool_dia" : 3.0
+
+}

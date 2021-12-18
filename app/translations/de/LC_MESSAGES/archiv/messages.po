@@ -1,0 +1,477 @@
+# German translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-12-18 04:40+0100\n"
+"PO-Revision-Date: 2021-12-18 04:41+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.1\n"
+
+#: app/blueprints/multilingual/routes.py:108
+msgid "Home"
+msgstr ""
+
+#: app/blueprints/multilingual/routes.py:116
+#: app/blueprints/multilingual/templates/multilingual/index.html:15
+#: app/templates/base_nav.html:32
+msgid "Contour"
+msgstr "Kontur"
+
+#: app/blueprints/multilingual/routes.py:150
+#: app/blueprints/multilingual/routes.py:152
+#: app/blueprints/multilingual/routes.py:168
+#: app/blueprints/multilingual/routes.py:186
+#: app/blueprints/multilingual/routes.py:203
+msgid "GCode Editor"
+msgstr ""
+
+#: app/blueprints/multilingual/routes.py:154
+#: app/blueprints/multilingual/templates/multilingual/contour/contour.html:16
+msgid "Circle 360"
+msgstr "Kreis 360°"
+
+#: app/blueprints/multilingual/routes.py:170
+#: app/blueprints/multilingual/templates/multilingual/contour/contour.html:33
+msgid "Circle arc"
+msgstr "Kreisausschnitt"
+
+#: app/blueprints/multilingual/routes.py:188
+msgid "rectangle"
+msgstr "Rechteck"
+
+#: app/blueprints/multilingual/routes.py:207
+msgid "rectanglerounded"
+msgstr "Rechteck abgerundet"
+
+#: app/blueprints/multilingual/routes.py:214
+#: app/blueprints/multilingual/templates/multilingual/index.html:32
+#: app/templates/base_nav.html:33
+msgid "Surface"
+msgstr "Oberfläche"
+
+#: app/blueprints/multilingual/routes.py:220
+#: app/blueprints/multilingual/templates/multilingual/index.html:49
+msgid "Pocket"
+msgstr "Tasche"
+
+#: app/blueprints/multilingual/routes.py:224
+#: app/blueprints/multilingual/templates/multilingual/index.html:66
+#: app/templates/base_nav.html:34
+msgid "Drilling"
+msgstr "Bohren"
+
+#: app/blueprints/multilingual/templates/multilingual/gcode_view.html:36
+#: app/blueprints/multilingual/templates/multilingual/gcode_view.html:58
+msgid "download GCode to file"
+msgstr "download GCode als Datei"
+
+#: app/blueprints/multilingual/templates/multilingual/gcode_view.html:39
+#: app/blueprints/multilingual/templates/multilingual/gcode_view.html:61
+msgid "Download GCode"
+msgstr ""
+
+#: app/blueprints/multilingual/templates/multilingual/gcode_view.html:45
+msgid "For help set cursor insode editor"
+msgstr "Für Hilfe, Cursor in den Editor positionieren"
+
+#: app/blueprints/multilingual/templates/multilingual/gcode_view.html:45
+msgid "CTRL-ALT-h for help"
+msgstr "CTRL-ALT-h für Hilfe"
+
+#: app/blueprints/multilingual/templates/multilingual/gcode_view.html:45
+msgid "CMD-ALT-h for help"
+msgstr "CMD-ALT-h für Hilfe"
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:4
+msgid "CNC GCode-Generators"
+msgstr ""
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:16
+msgid ""
+"With this module various contours can be milled (e.g. circles, "
+"rectangles, triangle etc)"
+msgstr "Mit diesem Modul können verschiedene Konturen gefräst werden (z.B. Kreise, Rechtecke, Dreiecke,...)"
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:33
+msgid ""
+"Surfaces can be milled flat with this module. Various milling paths are "
+"available"
+msgstr "Planfräsen von Oberflächen. Verschieden Fräse-Bahnwege stehen zur Verfügung"
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:50
+msgid ""
+"With this module you can mill various pockets (circular pocket, "
+"rectangular pocket, ...)"
+msgstr ""
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:67
+msgid ""
+"With this module you can create holes (in circular shape, circular "
+"sections, rectangular, ..."
+msgstr "Mit diesem Modul können Taschen gefräst werden (Kreistasche, Rechtecktasche, ...)"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/circle360.html:16
+msgid "Diameter circle"
+msgstr "Kreisdurchmesser"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/circle360.html:17
+#: app/blueprints/multilingual/templates/multilingual/contour/circlearc.html:14
+#: app/blueprints/multilingual/templates/multilingual/contour/circlearc.html:29
+#: app/blueprints/multilingual/templates/multilingual/contour/circlearc.html:34
+#: app/blueprints/multilingual/templates/multilingual/contour/rectanglerounded.html:15
+#: app/blueprints/multilingual/templates/multilingual/contour/rectanglerounded.html:21
+#: app/blueprints/multilingual/templates/multilingual/contour/rectanglerounded.html:29
+msgid "only positive number > 0 is allowed"
+msgstr "nur positive Zahlen >0 sind erlaubt"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/circlearc.html:12
+msgid "Enter radius of circel"
+msgstr "Eingabe Kreisradius"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/circlearc.html:13
+msgid "Radius arc"
+msgstr "Radius Kreisausschnitt"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/circlearc.html:19
+msgid "e.g. if start angle is 225 than end angle is 315"
+msgstr "z.B. Start-Winkel ist 225° und End-Winkel ist 315°"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/circlearc.html:20
+msgid "Start/End are symetric in a 90° angle"
+msgstr "Start/Ende Winkel sind symetrisch in 90°"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/circlearc.html:27
+msgid "Start angle (w1)"
+msgstr "Start-Winkel (w1)"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/circlearc.html:28
+msgid "Starting angle (w1)"
+msgstr "Start-Winkel (w1)"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/circlearc.html:32
+msgid "End angle (w2)"
+msgstr "End-Winkel (w2)"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/circlearc.html:33
+msgid "Ending angle (w2)"
+msgstr "End-Winkel (w2)"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/contour.html:4
+msgid "CNC Contour-Generators"
+msgstr ""
+
+#: app/blueprints/multilingual/templates/multilingual/contour/contour.html:17
+msgid "Milling a 360deg circle with diameter D"
+msgstr "Fräse einen Kreis mit einem Durchmesser D"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/contour.html:34
+msgid "Milling a circle arc with an angle w and an radius R"
+msgstr "Färse einen Kreissauschnit mit Winkel w und Radius R"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/contour.html:51
+msgid "Rectangle"
+msgstr "Rechteck"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/contour.html:52
+msgid "Milling a rectangle a x b"
+msgstr "Fräse Rechteck in der Größe a*b"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/contour.html:68
+msgid "Rounded Rectangle"
+msgstr "Rechteck abgerundet"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/contour.html:69
+msgid "Milling a rounded rectangel a x b with edge radius R"
+msgstr "Fräse abgerundetes Rechteck a*b mit Eckenradius R"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/rectangle.html:14
+#: app/blueprints/multilingual/templates/multilingual/contour/rectanglerounded.html:14
+msgid "Rectangle width (a)"
+msgstr "Rechteckbreite (a)"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/rectangle.html:18
+#: app/blueprints/multilingual/templates/multilingual/contour/rectanglerounded.html:20
+msgid "Rectangle height (b)"
+msgstr "Rechteckhöhe (b)"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/rectanglerounded.html:13
+msgid "Enter width of rectangle"
+msgstr "Eingabe der Breite des Rechtecks"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/rectanglerounded.html:19
+msgid "Enter height of rectangle"
+msgstr "Eingabe der Höhe des Rechtecks"
+
+#: app/blueprints/multilingual/templates/multilingual/contour/rectanglerounded.html:27
+msgid "Enter edge radius"
+msgstr "Eingebabe des Ecken-Radius
+
+#: app/blueprints/multilingual/templates/multilingual/contour/rectanglerounded.html:28
+msgid "Radius"
+msgstr ""
+
+#: app/templates/base_milling.html:20
+msgid "Define GCode sequences for Pre- or post milling"
+msgstr "Erfasse GCode Sequenzen für Pre- oder Post-Fräse"
+
+#: app/templates/base_milling.html:21
+msgid "Pre & Post Parameters"
+msgstr "Pre & Post Parameter"
+
+#: app/templates/base_milling.html:27
+msgid "Please insert Pre-GCode"
+msgstr "Bitte Pre-GCode definieren"
+
+#: app/templates/base_milling.html:31
+msgid "Please insert Post-GCode"
+msgstr "Bitte Post-GCode definieren"
+
+#: app/templates/base_milling.html:44
+msgid "define standard milling params independend of object"
+msgstr "Standard-Fräse Parameter basierend auf das Objekt"
+
+#: app/templates/base_milling.html:44
+msgid "Standard Milling Parameters"
+msgstr "Standard Fräs-Parameter"
+
+#: app/templates/base_milling.html:52
+msgid "Choose your start point"
+msgstr "Auswahl Startpunkt"
+
+#: app/templates/base_milling.html:55 app/templates/base_milling.html:57
+msgid "Center point of cutter"
+msgstr "Mittelpunkt für Fräser"
+
+#: app/templates/base_milling.html:61
+msgid "Origin starting point for cutter"
+msgstr "Original Startpunkt der Fräse (0/0)"
+
+#: app/templates/base_milling.html:61
+msgid "Start center point of cutter"
+msgstr "Startmittlelpunkt des Fräsers"
+
+#: app/templates/base_milling.html:68
+msgid "Choose your unit"
+msgstr "Einheit auswählen"
+
+#: app/templates/base_milling.html:84
+msgid "Choose your direction"
+msgstr "Fräsrichtung auswählen"
+
+#: app/templates/base_milling.html:95
+msgid "Movement is clockwise or counter clockwise"
+msgstr "Fräsrichtung rechts(CW), links (CCW)"
+
+#: app/templates/base_milling.html:95
+msgid "Moving direction"
+msgstr "Bewegungsrichtung"
+
+#: app/templates/base_milling.html:101
+msgid "Depth of immersion"
+msgstr "Eintauchtiefe"
+
+#: app/templates/base_milling.html:112
+msgid "Tool is online, inside or outside of contour"
+msgstr "Fräse auf Kontur, ausserhalb, innerhalb der Kontur"
+
+#: app/templates/base_milling.html:112
+msgid "Kind of movement"
+msgstr "Bewegungsart"
+
+#: app/templates/base_milling.html:119
+msgid "typical values are 0.5, 1.0, 1.5, ..."
+msgstr "Typische Werte sind 0.5, 1.0, 1.5, ..."
+
+#: app/templates/base_milling.html:120
+msgid "Depth per step"
+msgstr "Eintauchtiefe pro Durchgang"
+
+#: app/templates/base_milling.html:121 app/templates/base_milling.html:127
+#: app/templates/base_milling.html:136 app/templates/base_milling.html:142
+#: app/templates/base_milling.html:148 app/templates/base_milling.html:154
+#: app/templates/base_milling.html:163 app/templates/base_milling.html:169
+msgid "only positive number gt 0 is allowed"
+msgstr "nur positive Werte > 0 sind erlaubt"
+
+#: app/templates/base_milling.html:125
+msgid "Max depth to mill"
+msgstr "Maximale Eintauchtiefe"
+
+#: app/templates/base_milling.html:126
+msgid "Depth total"
+msgstr "Eintauchtiefe gesamt"
+
+#: app/templates/base_milling.html:134
+msgid "Enter milling speed value for X/Y axis"
+msgstr "Eingabe Geschwindigkeit für X/Y Achse"
+
+#: app/templates/base_milling.html:135
+msgid "Feed Rapid X/Y"
+msgstr "G0 Geschwindigkeit X/Y"
+
+#: app/templates/base_milling.html:140
+msgid "Enter milling speed value for Z axis"
+msgstr "Geschwindigkeit Hub Z-Achse"
+
+#: app/templates/base_milling.html:141
+msgid "Feed Rapid Z"
+msgstr "G0 Geschwindigkeit für Z"
+
+#: app/templates/base_milling.html:146
+msgid "Enter speed value for X/Y axis"
+msgstr "Eingabe Geschwindigkeit für X/Y Achse"
+
+#: app/templates/base_milling.html:147
+msgid "Feed Linear X/Y"
+msgstr "Fräsgeschwindigkeit X/Y"
+
+#: app/templates/base_milling.html:152
+msgid "Enter speed value for Z axis"
+msgstr "Fräsgeschwindigkeit für Z-Achse"
+
+#: app/templates/base_milling.html:153
+msgid "Feed Linear Z"
+msgstr "Fräsgeschwindigkeit für Z-Achse"
+
+#: app/templates/base_milling.html:161
+msgid "Enter hight for Z before starting"
+msgstr "Starthöhe Z (> 0.0) "
+
+#: app/templates/base_milling.html:162
+msgid "Start Z-Height"
+msgstr "Starthöhe Z (> 0.0) "
+
+#: app/templates/base_milling.html:167
+msgid "Enter saftey hight for Z after milling"
+msgstr "Endhöhe (Save) Z"
+
+#: app/templates/base_milling.html:168
+msgid "Saftey Z-Height"
+msgstr "Endhöhe (Save) Z"
+
+#: app/templates/base_milling.html:204 app/templates/base_milling.html:205
+msgid "Set your cutter diameter"
+msgstr "Fräserdurchmesser"
+
+#: app/templates/base_milling.html:206
+msgid "only positive number gt 1.0   is allowed"
+msgstr "nur positive Werte > 1.0 sind erlaubt"
+
+#: app/templates/base_milling.html:209 app/templates/base_milling.html:210
+msgid "Set your tool id"
+msgstr "Tool-ID"
+
+#: app/templates/base_milling.html:211
+msgid "only positive number from 0 to 99 are allowed"
+msgstr "nur positive Werte von 0 bis 99 sind erlaubt"
+
+#: app/templates/base_milling.html:214 app/templates/base_milling.html:215
+msgid "Set your spindle speed"
+msgstr "Spindelgeschwindigkeit (RPM)"
+
+#: app/templates/base_milling.html:216
+msgid "only positive number from 0 to 30000 are allowed"
+msgstr "nur positive Werte von 0 bis 30000 sind erlaubt"
+
+#: app/templates/base_milling.html:219
+msgid "Recommended parameters"
+msgstr "Empfohlene Parameter"
+
+#: app/templates/base_milling.html:220
+msgid ""
+"Due to your individuell machine parameters, feed rate, infeed rate and "
+"your used spindle this recommendatoins maybe not be optimized for your "
+"setup"
+msgstr "Basierend auf die individuellen Maschinenparaemter, Geschwindkeite, Eintauchtiefe und der Spindel sind nachfolgende Parameter vielleicht nicht optimal für das vorliegende Setup"
+
+#: app/templates/base_milling.html:225
+msgid "Tool"
+msgstr ""
+
+#: app/templates/base_milling.html:226
+msgid "Tool diameter"
+msgstr "Werkzeugdurchmesser"
+
+#: app/templates/base_milling.html:227
+msgid "Feed rate <br>mm/min"
+msgstr "Geschwindigkeit <br>mm/min"
+
+#: app/templates/base_milling.html:228
+msgid "Infeed rate <br>mm/min"
+msgstr "Eintauchtiefe <br>mm/min"
+
+#: app/templates/base_milling.html:229
+msgid "Spindel-RPM <br>min"
+msgstr ""
+
+#: app/templates/base_milling.html:230
+msgid "Spindel-RPM <br>max"
+msgstr ""
+
+#: app/templates/base_milling.html:231
+msgid "Spindel"
+msgstr ""
+
+#: app/templates/base_milling.html:255
+msgid "Specific object parameter"
+msgstr "Spezifische Objektparameter"
+
+#: app/templates/base_milling.html:269
+msgid "Generate GCode and show code"
+msgstr "Generiere GCode"
+
+#: app/templates/base_milling.html:272
+msgid "Generate GCode"
+msgstr "Generiere GCode"
+
+#: app/templates/base_milling.html:284
+msgid "Close"
+msgstr "Schließen"
+
+#: app/templates/base_nav.html:11
+msgid "Toolset & Material"
+msgstr "Werkzeuge & Material"
+
+#: app/templates/base_nav.html:12
+msgid "GCodes"
+msgstr ""
+
+#: app/templates/base_nav.html:19
+msgid "english"
+msgstr "Englisch"
+
+#: app/templates/base_nav.html:20
+msgid "german"
+msgstr "Deutsch"
+
+#: app/templates/base_nav.html:21
+msgid "french"
+msgstr "Französisch"
+
+#: app/templates/base_nav.html:35
+msgid "Pockets"
+msgstr "Taschen"
+
+#: app/templates/base_nav.html:97
+msgid "Set offset x"
+msgstr "X-Offset"
+
+#: app/templates/base_nav.html:97 app/templates/base_nav.html:98
+msgid "only positive number >= 0 is allowed"
+msgstr "nur positive Werte >= 0 sind erlaubt"
+
+#: app/templates/base_nav.html:98
+msgid "Set offset y"
+msgstr "Y-Offset"
+

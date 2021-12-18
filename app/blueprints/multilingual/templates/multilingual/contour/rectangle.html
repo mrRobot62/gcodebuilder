@@ -1,0 +1,22 @@
+{% extends "base_milling.html" %}
+
+{% block image %} 
+<div class="card-panel grey lighten-5 z-depth-1">
+   <!-- <img class="materialboxed" width="650" src="/static/images/contour/circle01.png">-->  
+      <img class="materialboxed" width="650" src="{{url_for('static', filename='images/contour/rectangle01.png')}}">
+</div>
+{% endblock %}
+
+{% block gemetrical_parameters %}
+<div class="row">
+   <div class="input-field col s6 m6">
+      <input required type="number" min="0.001" max="999.0" step="0.001" placeholder="Enter width (a)" id="width" name="width" class="materialize-textarea"></input>
+      <label class="active" for="post_gcode">{{_('Rectangle width (a)')}}</label>
+   </div>
+   <div class="input-field col s6 m6">
+      <input required type="number" min="0.001" max="999.0" step="0.001" placeholder="Enter height (b)" id="height" name="height" class="materialize-textarea"></input>
+      <label class="active" for="post_gcode">{{_('Rectangle height (b)')}}</label>
+   </div>
+</div>
+
+{% endblock %}

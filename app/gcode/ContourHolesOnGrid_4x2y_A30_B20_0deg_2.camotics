@@ -1,0 +1,83 @@
+{
+      "units": "metric",
+      "resolution-mode": "medium",
+      "resolution": 1,
+      "tools": {
+        "1": {
+          "units": "metric",
+          "shape": "ballnose",
+          "length": 10,
+          "diameter": 2.5,
+          "description": ""
+        },
+        "2": {
+          "units": "metric",
+          "shape": "cylindrical",
+          "length": 10,
+          "diameter": 2,
+          "description": ""
+        },
+        "3": {
+          "units": "metric",
+          "shape": "cylindrical",
+          "length": 10,
+          "diameter": 2,
+          "description": ""
+        },
+        "4": {
+          "units": "metric",
+          "shape": "cylindrical",
+          "length": 10,
+          "diameter": 6,
+          "description": ""
+        },
+        "5": {
+          "units": "metric",
+          "shape": "snubnose",
+          "length": 10,
+          "diameter": 2,
+          "snub_diameter": 9,
+          "description": ""
+        },
+        "6": {
+          "units": "metric",
+          "shape": "cylindrical",
+          "length": 10,
+          "diameter": 2,
+          "description": ""
+        },
+        "7": {
+          "units": "metric",
+          "shape": "snubnose",
+          "length": 10,
+          "diameter": 5,
+          "snub_diameter": 2,
+          "description": ""
+        },
+        "8": {
+          "units": "metric",
+          "shape": "cylindrical",
+          "length": 10,
+          "diameter": 2,
+          "description": ""
+        },
+        "9": {
+          "units": "metric",
+          "shape": "cylindrical",
+          "length": 10,
+          "diameter": 12,
+          "description": ""
+        }
+      },
+      "workpiece": {
+        "automatic": true,
+        "margin": 5,
+        "bounds": {
+          "min": [-17.875, -7.864147, -3.9375],
+          "max": [193.875, 27.864147, 0]
+        }
+      },
+      "files": [
+        "ContourHolesOnGrid_4x2y_A30_B20_0deg_2.ngc"
+      ]
+    }

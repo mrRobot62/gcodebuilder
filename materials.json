@@ -1,0 +1,581 @@
+{
+  "Plastic": [
+    {
+      "Polystyrol": {
+        "Tool": "Single cutter",
+        "ToolID": 11,
+        "Tool dia": 1,
+        "Feed rate mm/sec": 10,
+        "Feed rate mm/min": 600,
+        "Infeed rate mm/min": 60,
+        "Spindel-RPM": "12000",
+        "Spindel": "?",
+        "Info": "{{_(Single Cutter)}}"
+      }
+    },
+    {
+      "Polystyrol": {
+        "Tool": "Single cutter",
+        "ToolID": 12,
+        "Tool dia": 0.5,
+        "Feed rate mm/sec": 4,
+        "Feed rate mm/min": 240,
+        "Infeed rate mm/min": 30,
+        "Spindel-RPM": "7500",
+        "Spindel": "Kress",
+        "Info": "Einschneid Fraeser"
+      }
+    },
+    {
+      "Polystyrol": {
+        "Tool": "Single cutter",
+        "ToolID": 13,
+        "Tool dia": 0.6,
+        "Feed rate mm/sec": 5,
+        "Feed rate mm/min": 300,
+        "Infeed rate mm/min": 30,
+        "Spindel-RPM": "7500-8000",
+        "Spindel": "Proxxon",
+        "Info": "Einschneid Fraeser"
+      }
+    },
+    {
+      "Polystyrol": {
+        "Tool": "Single cutter",
+        "ToolID": 14,
+        "Tool dia": 0.7,
+        "Feed rate mm/sec": 10,
+        "Feed rate mm/min": 600,
+        "Infeed rate mm/min": 60,
+        "Spindel-RPM": "8000",
+        "Spindel": "Kress",
+        "Info": "Einschneid Fraeser"
+      }
+    },
+    {
+      "Material": "Polystyrol",
+      "Tool": "Single cutter",
+      "ToolID": 15,
+      "Tool dia": 1,
+      "Feed rate mm/sec": 5,
+      "Feed rate mm/min": 300,
+      "Infeed rate mm/min": 30,
+      "Spindel-RPM": "8000",
+      "Spindel": "Proxxon",
+      "Info": "Einschneid Fraeser"
+    },
+    {
+      "PMMA (Acrylglas GS)": {
+        "Tool": "Single cutter",
+        "ToolID": 16,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 25,
+        "Feed rate mm/min": 1500,
+        "Infeed rate mm/min": 30,
+        "Spindel-RPM": "9000",
+        "Spindel": "IBS/E",
+        "Info": "Einschneid Fraeser"
+      }
+    },
+    {
+      "PMMA 4mm (Plexiglas)": {
+        "Tool": "Single cutter",
+        "ToolID": 17,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 25,
+        "Feed rate mm/min": 1500,
+        "Infeed rate mm/min": 25,
+        "Spindel-RPM": "20000",
+        "Spindel": "IBS/E",
+        "Info": "Einschneid Fraeser"
+      }
+    },
+    {
+      "PMMA 15mm (Plexiglas)": {
+        "Tool": "VHM Fishtail",
+        "ToolID": 18,
+        "Tool dia": 3,
+        "Feed rate mm/sec": 10,
+        "Feed rate mm/min": 600,
+        "Infeed rate mm/min": 30,
+        "Spindel-RPM": "15000",
+        "Spindel": "?",
+        "Info": "VHM Fisch, Sonderlänge Sorotec"
+      }
+    },
+    {
+      "Polycarbonat-/ Polystyrolglas": {
+        "Tool": "Single cutter",
+        "ToolID": 19,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 15,
+        "Feed rate mm/min": 900,
+        "Infeed rate mm/min": 25,
+        "Spindel-RPM": "9000",
+        "Spindel": "?",
+        "Info": "Einschneid Fraeser"
+      }
+    },
+    {
+      "Acrylstein (HI-MACS / Corian)": {
+        "Tool": "Single/Dual cutter",
+        "ToolID": 20,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 5,
+        "Feed rate mm/min": 300,
+        "Infeed rate mm/min": 30,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "Ein-/Zweischneid Fraeser"
+      }
+    },
+    {
+      "PVC-Hartschaum (Forex)": {
+        "Tool": "Single cutter",
+        "ToolID": 21,
+        "Tool dia": 1,
+        "Feed rate mm/sec": 15,
+        "Feed rate mm/min": 900,
+        "Infeed rate mm/min": 30,
+        "Spindel-RPM": "9000",
+        "Spindel": "?",
+        "Info": "Einschneid Fraeser"
+      }
+    },
+    {
+      "PE": {
+        "Tool": "Single cutter",
+        "ToolID": 22,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 10,
+        "Feed rate mm/min": 600,
+        "Infeed rate mm/min": 60,
+        "Spindel-RPM": "13000",
+        "Spindel": "?",
+        "Info": "Einschneid Fraeser"
+      }
+    },
+    {
+      "HPL": {
+        "Tool": "Spiral toothed Fishtail",
+        "ToolID": 23,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 7,
+        "Feed rate mm/min": 420,
+        "Infeed rate mm/min": 120,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "Spiralverzahnt Fischschwanz"
+      }
+    },
+    {
+      "Aludibond": {
+        "Tool": "Dual cutter",
+        "ToolID": 24,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 5,
+        "Feed rate mm/min": 300,
+        "Infeed rate mm/min": 300,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "Zweischneid Fraeser"
+      }
+    },
+    {
+      "Linoleum": {
+        "Tool": "Single cutter",
+        "ToolID": 25,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 8,
+        "Feed rate mm/min": 480,
+        "Infeed rate mm/min": 90,
+        "Spindel-RPM": "10000",
+        "Spindel": "?",
+        "Info": "Gravierstichel/Einschneider"
+      }
+    },
+    {
+      "Gummi (FITON/FKM)": {
+        "Tool": "Single cutter",
+        "ToolID": 26,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 3,
+        "Feed rate mm/min": 180,
+        "Infeed rate mm/min": 120,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "Einschneid Fraeser"
+      }
+    }
+  ],
+  "Metal": [
+    {
+      "Aluminium (Al Cu Mg1)": {
+        "Tool": "Dual cutter",
+        "ToolID": 23,
+        "Tool dia": 3,
+        "Feed rate mm/sec": 5,
+        "Feed rate mm/min": 300,
+        "Infeed rate mm/min": 15,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "2-Schneid Fraeser"
+      }
+    },
+    {
+      "Aluminium (Al Mg4,5 Mn)": {
+        "Tool": "VHM cutter",
+        "ToolID": 24,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 3,
+        "Feed rate mm/min": 180,
+        "Infeed rate mm/min": 60,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "VHM Fraeser"
+      }
+    },
+    {
+      "Aluminium (Baumarktalu)": {
+        "Tool": "Dual cutter",
+        "ToolID": 22,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 10,
+        "Feed rate mm/min": 600,
+        "Infeed rate mm/min": 12,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "2-Schneid Fraeser, "
+      }
+    },
+    {
+      "Aluminium (Al Mg4,5 Mn)": {
+        "Tool": "Dual cutter",
+        "ToolID": 25,
+        "Tool dia": 3,
+        "Feed rate mm/sec": 5,
+        "Feed rate mm/min": 300,
+        "Infeed rate mm/min": 60,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "2-Schneid Fraeser, "
+      }
+    },
+    {
+      "Aluminium 10mm (Al Mg4,5 Mn)": {
+        "Tool": "Dual cutter",
+        "ToolID": 26,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 1.5,
+        "Feed rate mm/min": 90,
+        "Infeed rate mm/min": 45,
+        "Spindel-RPM": "29000",
+        "Spindel": "?",
+        "Info": "2-Schneid Fraeser"
+      }
+    },
+    {
+      "Aluminium 3mm (Al Mg 3)": {
+        "Tool": "Tripple cutter",
+        "ToolID": 27,
+        "Tool dia": 3,
+        "Feed rate mm/sec": 2.5,
+        "Feed rate mm/min": 150,
+        "Infeed rate mm/min": 30,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "3-Schneid Fraeser"
+      }
+    },
+    {
+      "Aluminium 3mm (Al Cu Mg 1)": {
+        "Tool": "Dual cutter",
+        "ToolID": 28,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 2.5,
+        "Feed rate mm/min": 150,
+        "Infeed rate mm/min": 15,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "2-Schneid Fraeser"
+      }
+    },
+    {
+      "Messing 3mm": {
+        "Tool": "Tripple cutter",
+        "ToolID": 29,
+        "Tool dia": 4,
+        "Feed rate mm/sec": 5,
+        "Feed rate mm/min": 300,
+        "Infeed rate mm/min": 30,
+        "Spindel-RPM": "25000",
+        "Spindel": "?",
+        "Info": "3-Schneid Fraeser"
+      }
+    },
+    {
+      "Stahl": {
+        "Tool": "Quadruple cutter",
+        "ToolID": 30,
+        "Tool dia": 4,
+        "Feed rate mm/sec": 3,
+        "Feed rate mm/min": 180,
+        "Infeed rate mm/min": 18,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "4-Schneid Fraeser"
+      }
+    },
+    {
+      "Stahl": {
+        "Tool": "VHM MX",
+        "ToolID": 31,
+        "Tool dia": 6,
+        "Feed rate mm/sec": 4,
+        "Feed rate mm/min": 240,
+        "Infeed rate mm/min": 7.2,
+        "Spindel-RPM": "6000",
+        "Spindel": "?",
+        "Info": "VHM mit MX Zahnung"
+      }
+    },
+    {
+      "Drill 2mm": {
+        "Tool": "2mm HSS drill",
+        "ToolID": 62,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 0,
+        "Feed rate mm/min": 0,
+        "Infeed rate mm/min": 40,
+        "Spindel-RPM": "10000",
+        "Spindel": "?",
+        "Info": "2mm HSS drill"
+      }
+    },
+    {
+      "Drill 3mm": {
+        "Tool": "3mm HSS drill",
+        "ToolID": 63,
+        "Tool dia": 3,
+        "Feed rate mm/sec": 0,
+        "Feed rate mm/min": 0,
+        "Infeed rate mm/min": 40,
+        "Spindel-RPM": "10000",
+        "Spindel": "?",
+        "Info": "4mm HSS drill"
+      }
+    },
+    {
+      "Drill 4mm": {
+        "Tool": "4mm HSS drill",
+        "ToolID": 64,
+        "Tool dia": 4,
+        "Feed rate mm/sec": 0,
+        "Feed rate mm/min": 0,
+        "Infeed rate mm/min": 60,
+        "Spindel-RPM": "10000",
+        "Spindel": "?",
+        "Info": "4mm HSS drill"
+      }
+    },
+    {
+      "Drill 6mm": {
+        "Tool": "6mm HSS drill",
+        "ToolID": 66,
+        "Tool dia": 6,
+        "Feed rate mm/sec": 0,
+        "Feed rate mm/min": 0,
+        "Infeed rate mm/min": 60,
+        "Spindel-RPM": "10000",
+        "Spindel": "?",
+        "Info": "6mm HSS drill"
+      }
+    }
+  ],
+  "Wood": [
+    {
+      "Balsa": {
+        "Tool": "Shank-type cutters",
+        "ToolID": 51,
+        "Tool dia": 1,
+        "Feed rate mm/sec": 5,
+        "Feed rate mm/min": 300,
+        "Infeed rate mm/min": 120,
+        "Spindel-RPM": "25000",
+        "Spindel": "?",
+        "Info": "Spiralverzahnter Fraeser"
+      }
+    },
+    {
+      "Birch plywood": {
+        "Tool": "Shank-type cutters",
+        "ToolID": 52,
+        "Tool dia": 1,
+        "Feed rate mm/sec": 15,
+        "Feed rate mm/min": 900,
+        "Infeed rate mm/min": 60,
+        "Spindel-RPM": "25000",
+        "Spindel": "?",
+        "Info": "Spiralverzahnter Fraeser"
+      }
+    },
+    {
+      "Poplar plywood": {
+        "Tool": "Shank-type cutters",
+        "ToolID": 53,
+        "Tool dia": 1,
+        "Feed rate mm/sec": 2,
+        "Feed rate mm/min": 120,
+        "Infeed rate mm/min": 132,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "Spiralverzahnter Fraeser"
+      }
+    },
+    {
+      "Beech plywood": {
+        "Tool": "Shank-type cutters",
+        "ToolID": 54,
+        "Tool dia": 3,
+        "Feed rate mm/sec": 5,
+        "Feed rate mm/min": 300,
+        "Infeed rate mm/min": 180,
+        "Spindel-RPM": "8000",
+        "Spindel": "?",
+        "Info": "Spiralverzahnter Fraeser"
+      }
+    },
+    {
+      "Beech plywood 6mm": {
+        "Tool": "Shank-type cutters",
+        "ToolID": 55,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 15,
+        "Feed rate mm/min": 900,
+        "Infeed rate mm/min": 132,
+        "Spindel-RPM": "25000",
+        "Spindel": "?",
+        "Info": "Spiralverzahnter Fraeser"
+      }
+    },
+    {
+      "Spruce solid wood": {
+        "Tool": "Shank-type cutters",
+        "ToolID": 57,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 7,
+        "Feed rate mm/min": 420,
+        "Infeed rate mm/min": 120,
+        "Spindel-RPM": "20000",
+        "Spindel": "?",
+        "Info": "Spiralverzahnter Fraeser"
+      }
+    },
+    {
+      "Beech solid wood": {
+        "Tool": "Shank-type cutters",
+        "ToolID": 58,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 20,
+        "Feed rate mm/min": 1200,
+        "Infeed rate mm/min": 120,
+        "Spindel-RPM": "20000",
+        "Spindel": "Kress",
+        "Info": "Spiralverzahnter Fraeser"
+      }
+    },
+    {
+      "Oak solid wood 7mm": {
+        "Tool": "Shank-type cutters",
+        "ToolID": 59,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 20,
+        "Feed rate mm/min": 1200,
+        "Infeed rate mm/min": 120,
+        "Spindel-RPM": "20000",
+        "Spindel": "Kress",
+        "Info": "Spiralverzahnter Fraeser"
+      }
+    },
+    {
+      "Oak solid wood 20mm": {
+        "Tool": "Dual cutter",
+        "ToolID": 60,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 17,
+        "Feed rate mm/min": 1020,
+        "Infeed rate mm/min": 144,
+        "Spindel-RPM": "20000",
+        "Spindel": "Kress",
+        "Info": "2-Schneid Fraeser"
+      }
+    },
+    {
+      "MDF": {
+        "Tool": "Dual cutter",
+        "ToolID": 61,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 10,
+        "Feed rate mm/min": 600,
+        "Infeed rate mm/min": 120,
+        "Spindel-RPM": "20000",
+        "Spindel": "IBS/E",
+        "Info": "2-Schneid Fraeser"
+      }
+    },
+    {
+      "HDF": {
+        "Tool": "Single cutter",
+        "ToolID": 62,
+        "Tool dia": 2,
+        "Feed rate mm/sec": 20,
+        "Feed rate mm/min": 1200,
+        "Infeed rate mm/min": 90,
+        "Spindel-RPM": "25000",
+        "Spindel": "AWS/KRESS",
+        "Info": "1-Schneid Fraeser"
+      }
+    },
+    {
+      "OSB 15mm": {
+        "Tool": "Single cutter",
+        "ToolID": 63,
+        "Tool dia": 3,
+        "Feed rate mm/sec": 20,
+        "Feed rate mm/min": 1200,
+        "Infeed rate mm/min": 180,
+        "Spindel-RPM": "25000",
+        "Spindel": "AWS/KRESS",
+        "Info": "1-Schneid Fraeser"
+      }
+    },
+    {
+      "Dibetou 40mm": {
+        "Tool": "Dual cutter",
+        "ToolID": 64,
+        "Tool dia": 6,
+        "Feed rate mm/sec": 15,
+        "Feed rate mm/min": 900,
+        "Infeed rate mm/min": 180,
+        "Spindel-RPM": "20000",
+        "Spindel": "Kress",
+        "Info": "2-Schneid Fraeser"
+      }
+    }
+  ],
+  "Stone": [
+    {
+      "Soapstone": {
+        "Tool": "Diamond cutters",
+        "ToolID": 51,
+        "Tool dia": 0.8,
+        "Feed rate mm/sec": 1.6,
+        "Feed rate mm/min": 960,
+        "Infeed rate mm/min": 60,
+        "Spindel-RPM": "25000",
+        "Spindel": "Kress",
+        "Info": "Diamantverzahnt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{% extends "base_nav.html" %}
+
+{% block content %} 
+<h4>{{_('CNC GCode-Generators')}}</h4>
+<hr>
+<div class="container">
+   <div class="row">
+      <!--  -->
+      <div class="col s12 m6 l3">
+         <div class="card blue-grey lighten-4 large">
+            <div class="card-image">
+               <img class="responsive-img" src="{{url_for('static', filename='images/contour/contour01.png')}}" height="65" width="65">
+            </div>
+            <div class="card-content">
+               <span class="card-title">{{_('Contour')}}</span>
+               <p>{{_('With this module various contours can be milled (e.g. circles, rectangles, triangle etc)')}}</p>
+            </div>
+            <div class="card-action">
+               <a class="right blue-grey-text" href="{{url_for('multilingual.contour')}}">
+                  <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">play_circle_filled</i></button>
+               </a>
+            </div>
+         </div>
+      </div>
+      <!--  -->
+      <div class="col s12 m6 l3">
+         <div class="card blue-grey lighten-4 large">
+            <div class="card-image">
+               <img class="responsive-img" src="{{url_for('static', filename='images/surface/surface01.png')}}" height="65" width="65">
+            </div>
+            <div class="card-content">
+               <span class="card-title">{{_('Surface')}}</span>
+               <p>{{_('Surfaces can be milled flat with this module. Various milling paths are available')}}</p>
+            </div>
+            <div class="card-action">
+               <a class="right blue-grey-text" href="{{url_for('multilingual.surface')}}">
+                  <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">play_circle_filled</i></button>
+               </a>
+            </div>
+         </div>
+      </div>
+      <!--  -->
+      <div class="col s12 m6 l3">
+         <div class="card blue-grey lighten-4 large">
+            <div class="card-image">
+               <img class="responsive-img" src="{{url_for('static', filename='images/pocket/pocket01.png')}}" height="65" width="65">
+            </div>
+            <div class="card-content">
+               <span class="card-title">{{_('Pocket')}}</span>
+               <p>{{_('With this module you can mill various pockets (circular pocket, rectangular pocket, ...)')}}</p>
+            </div>
+            <div class="card-action">
+               <a class="right blue-grey-text" href="{{url_for('multilingual.pocket')}}">
+                  <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">play_circle_filled</i></button>
+               </a>
+            </div>
+         </div>
+      </div>   
+      <!--  -->
+      <div class="col s12 m6 l3">
+         <div class="card blue-grey lighten-4 large">
+            <div class="card-image">
+               <img class="responsive-img" src="{{url_for('static', filename='images/drilling/drilling_02.png')}}" height="65" width="65">
+            </div>
+            <div class="card-content">
+               <span class="card-title">{{_('Drilling')}}</span>
+               <p>{{_('With this module you can create holes (in circular shape, circular sections, rectangular, ...' )}}</p>
+            </div>
+            <div class="card-action">
+               <a class="right blue-grey-text" href="{{url_for('multilingual.drilling')}}">
+                  <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">play_circle_filled</i></button>
+               </a>
+            </div>
+         </div>
+      </div>   
+   
+   </div>
+</div>
+{% endblock content %}
+

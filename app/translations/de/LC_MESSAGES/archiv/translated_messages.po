@@ -1,0 +1,88 @@
+# German translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-11-10 23:02+0100\n"
+"PO-Revision-Date: 2021-11-10 23:02+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: app/blueprints/multilingual/routes.py:69
+#: app/blueprints/multilingual/templates/multilingual/index.html:15
+#: app/templates/base_nav.html:26
+msgid "Contour"
+msgstr "Kontur"
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:4
+msgid "CNC GCode-Generators"
+msgstr ""
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:16
+msgid ""
+"With this module various contours can be milled (e.g. circles, "
+"rectangles, triangle etc)"
+msgstr "Mit diesem Modul können verschiedene Konturen gefräst werden (z.B. Kreise, Rechtecke, Dreiecke,...)"
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:31
+#: app/templates/base_nav.html:27
+msgid "Surface"
+msgstr "Oberfläche"
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:32
+msgid ""
+"Surfaces can be milled flat with this module. Various milling paths are "
+"available"
+msgstr "Planfräsen von Oberflächen. Verschieden Fräse-Bahnwege stehen zur Verfügung"
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:47
+msgid "Pocket"
+msgstr "Taschen/Nuten"
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:48
+msgid ""
+"With this module you can mill various pockets (circular pocket, "
+"rectangular pocket, ...)"
+msgstr "Mit diesem Modul können Taschen gefräst werden (Kreistasche, Rechtecktasche, ...)"
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:63
+#: app/templates/base_nav.html:28
+msgid "Drilling"
+msgstr "Bohren"
+
+#: app/blueprints/multilingual/templates/multilingual/index.html:64
+msgid ""
+"With this module you can create holes (in circular shape, circular "
+"sections, rectangular, ..."
+msgstr "Mit diesem Modul können divese Bohrmuster gebohrt werden. (Bohrung im Kreis, Kreisabschnitten, Rechteckig ...)"
+
+#: app/templates/base_nav.html:7
+msgid "Toolset & Material"
+msgstr ""
+
+#: app/templates/base_nav.html:13
+msgid "english"
+msgstr "Englisch"
+
+#: app/templates/base_nav.html:14
+msgid "german"
+msgstr "Deutsch"
+
+#: app/templates/base_nav.html:15
+msgid "french"
+msgstr "Französisch"
+
+#: app/templates/base_nav.html:29
+msgid "Pockets"
+msgstr "Taschen"
+

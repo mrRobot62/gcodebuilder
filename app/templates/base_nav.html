@@ -1,0 +1,138 @@
+{% include "material/base.html" %}
+
+
+{%- block styles %}
+  <link href="{{url_for('static', filename='css/gcode.css')}}" rel="stylesheet">
+{%- endblock styles %}
+
+{% block navbar %}
+<!-- Menu drop down structure  -->
+<ul id="mnu_global" class="dropdown-content">
+   <li><a href="#!">{{_('Toolset & Material')}}</a></li>
+   <li><a href="#!">{{_('GCodes')}}</a></li>
+
+<!--
+    <li><a href="#!">{{_('')}}</a></li> 
+-->
+  </ul>
+<ul id="mnu_language" class="dropdown-content">
+  <li><a href="#!">{{_('english')}}</a></li>
+  <li><a href="#!">{{_('german')}}</a></li>
+  <li><a href="#!">{{_('french')}}</a></li>
+<!--
+    <li><a href="#!">{{_('')}}</a></li> 
+--></ul>
+
+<!-- Navigator -->
+ <nav class="purple">
+   <div class="nav-wrapper">
+     <a href="{{url_for('multilingual.index')}}" class="brand-logo">GCode-Geometicals</a>
+     <ul class="right hide-on-med-and-down">
+       <!-- Dropdown Trigger -->
+       <li><a href="{{url_for('multilingual.contour')}}" >{{_('Contour')}}</a></li>
+       <li><a href="{{url_for('multilingual.surface')}}" >{{_('Surface')}}</a></li>
+       <li><a href="{{url_for('multilingual.drilling')}}" >{{_('Drilling')}}</a></li>
+       <li><a href="{{url_for('multilingual.pocket')}}" >{{_('Pockets')}}</a></li>
+       <li><a class="dropdown-trigger" href="#!" data-target="mnu_global"><i class="material-icons right">settings</i></a></li>
+       <li><a class="dropdown-trigger" href="#!" data-target="mnu_language"><i class="material-icons right">language</i></a></li>
+     </ul>
+   </div>
+ </nav>
+
+ {%- endblock navbar %}
+
+{% block content %}
+{% endblock content %}
+
+{% block subscripts %} 
+{% endblock %}
+
+{% block scripts %} 
+ <script type="text/javascript">
+
+  function CreateNumberInputField(required, name, labeltxt, min, max, step, placeholder, helpertext) {
+    var input = document.createElement("input");
+    var label = document.createElement("label");
+    var div = document.createElement("div");
+    var helper = document.createElement("span");
+
+    //div.appendChild(document.createTextNode(labeltxt));
+
+    // set input field
+    input.className       = "materialize-input"
+    if (required) {
+      input.required      = true;
+      input.className     = "materialize-input validate"
+    }
+    input.type            ="number";
+    input.min             = min;
+    input.max             = max;
+    input.step            = step;
+    input.placeholder     = placeholder;
+    input.name            = name;
+    input.id              = name;
+    div.appendChild(input);
+    // set a label
+    label.className       = "active";
+    label.for             = name;
+    label.innerHTML       = labeltxt;
+    div.appendChild(label);
+    // set a helper
+    helper.className      = "helper-text";
+    helper['data-error'] = helpertext;
+    div.appendChild(helper);
+    // set a new div container
+    div.className             = "input-field col s6 m6";
+    return div;
+  }
+
+  function ChangeCenterPoint() {
+    var container = document.getElementById("center_point_xy");
+    if ($('#center_point').val() == "0") {
+      console.log("centerpoint = 0")
+      // Clear previous contents of the container
+      while (container.hasChildNodes()) {
+        container.removeChild(container.lastChild);
+      }
+      f1 = CreateNumberInputField(true, "center_offset_x","{{_('Set offset x')}}","0.001","999.0","0.001","{{_('Set offset x')}}","{{_('only positive number >= 0 is allowed')}}")
+      f2 = CreateNumberInputField(true, "center_offset_y","{{_('Set offset y')}}","0.001","999.0","0.001","{{_('Set offset y')}}","{{_('only positive number >= 0 is allowed')}}")
+      container.appendChild(f1);
+      container.appendChild(f2);
+    }
+    else if ($('#center_point').val() == "1") {
+      console.log("centerpoint = 1")
+      // Clear previous contents of the container
+      while (container.hasChildNodes()) {
+        container.removeChild(container.lastChild);
+      }    
+    }
+
+    console.log("hurra")
+  }
+
+   document.addEventListener('DOMContentLoaded', function() {
+   });
+
+   $(document).submit(function(){
+     var form = document;
+    }
+   )
+
+  function submitForm(event) {
+  }
+
+   $(document).ready(function(){
+      $('.fixed-action-btn').floatingActionButton();
+      $(".dropdown-trigger").dropdown();
+      $('select').formSelect();
+      M.updateTextFields();
+      $('.collapsible').collapsible();
+      $('.tooltipped').tooltip();
+      $('.modal').modal();
+      //const form = document.querySelector('form');
+      //form.addEventListener('submit', submitForm,true);
+    });
+
+
+</script>
+ {% endblock %}

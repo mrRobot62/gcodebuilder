@@ -1,0 +1,51 @@
+{% extends "base_milling.html" %}
+
+{% block image %} 
+<div class="card-panel grey lighten-5 z-depth-1">
+   <img class="materialboxed" width="650" src="/static/images/contour/circlearc02.png">
+</div>
+{% endblock %}
+
+{% block gemetrical_parameters %}
+<div class="row">
+   <div class="input-field col s6 m6">
+      <input required type="number" min="0.001" max="999.0" step="0.001" placeholder="{{_('Enter radius of circel')}}" name="radius" id="radius" class="materialize-input validate"></input>
+      <label class="active" for="radius">{{_('Radius arc')}}</label>
+      <span class="helper-text" data-error="{{_('only positive number > 0 is allowed')}}" ></span>
+   </div>
+   <div class="input-field col s6 m6">
+      <label>
+         <input type="checkbox" name="arc_symetric" id="arc_symetric" class="filled-in" ></input>
+         <span class="helper-text" data-error="{{_('e.g. if start angle is 225 than end angle is 315')}}" >
+            {{_('Start/End are symetric in a 90° angle')}}
+         </span>
+      </label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s6 m6">
+      <input required type="number" min="0.0" max="360.0" step="0.001" placeholder="{{_('Start angle (w1)')}}" name="angle_start" id="angle_start" class="materialize-input validate"></input>
+      <label class="active" for="angle_start">{{_('Starting angle (w1)')}}</label>
+      <span class="helper-text" data-error="{{_('only positive number > 0 is allowed')}}" ></span>
+   </div>
+   <div class="input-field col s6 m6">
+      <input required type="number" min="0.0" max="360.0" step="0.001" placeholder="{{_('End angle (w2)')}}" name="angle_end" id="angle_end" class="materialize-input validate"></input>
+      <label class="active" for="angle_end">{{_('Ending angle (w2)')}}</label>
+      <span class="helper-text" data-error="{{_('only positive number > 0 is allowed')}}" ></span>
+   </div>
+</div>
+{% endblock %}
+
+{% block subscripts %} 
+   <script type="text/javascript">
+      function ChangeCBCenterArc() {
+         var container = document.getElementById("arc_center");
+         if ($('#arc_center').val() == "1") {
+            console.log("ArcEnterPoint checkbox ON");
+         }
+         else {
+            console.log("ArcEnterPoint checkbox ON");        
+         }
+      }
+   </script>
+{% endblock %}

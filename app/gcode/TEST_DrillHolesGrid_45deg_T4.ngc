@@ -1,0 +1,110 @@
+%
+
+(set general preamble)
+G90 G64 G17 G40 G49 
+
+(Tool handling)
+T004 M6 
+(Spindel control)
+M3 S10000 
+
+G21
+
+(set Z saftey position)
+G00 Z0010.000 F200.0 
+
+(--- START DRILL HOLES ---)
+ (--Hole #01 at angle 045.0deg --)
+  G01 Z0003.000 F120.0 
+  G01 X0000.000 Y0000.000 F100.0 
+  (-- start loop --)
+    (-- new Z -000.500 --) 
+    (drill)
+    G01 Z-000.500 F0120 
+    G04 P0.25 
+    (retraction)
+    G01 Z0000.500 F0200 
+
+  G00 Z0003.000 F0200 
+  (-- end loop --)
+
+ (--Hole #02 at angle 045.0deg --)
+  G01 Z0003.000 F120.0 
+  G01 X0007.071 Y0007.071 F100.0 
+  (-- start loop --)
+    (-- new Z -000.500 --) 
+    (drill)
+    G01 Z-000.500 F0120 
+    G04 P0.25 
+    (retraction)
+    G01 Z0000.500 F0200 
+
+  G00 Z0003.000 F0200 
+  (-- end loop --)
+
+ (--Hole #03 at angle 045.0deg --)
+  G01 Z0003.000 F120.0 
+  G01 X0014.142 Y0014.142 F100.0 
+  (-- start loop --)
+    (-- new Z -000.500 --) 
+    (drill)
+    G01 Z-000.500 F0120 
+    G04 P0.25 
+    (retraction)
+    G01 Z0000.500 F0200 
+
+  G00 Z0003.000 F0200 
+  (-- end loop --)
+
+ (--Hole #04 at angle 045.0deg --)
+  G01 Z0003.000 F120.0 
+  G01 X-007.071 Y0007.071 F100.0 
+  (-- start loop --)
+    (-- new Z -000.500 --) 
+    (drill)
+    G01 Z-000.500 F0120 
+    G04 P0.25 
+    (retraction)
+    G01 Z0000.500 F0200 
+
+  G00 Z0003.000 F0200 
+  (-- end loop --)
+
+ (--Hole #05 at angle 045.0deg --)
+  G01 Z0003.000 F120.0 
+  G01 X0000.000 Y0014.142 F100.0 
+  (-- start loop --)
+    (-- new Z -000.500 --) 
+    (drill)
+    G01 Z-000.500 F0120 
+    G04 P0.25 
+    (retraction)
+    G01 Z0000.500 F0200 
+
+  G00 Z0003.000 F0200 
+  (-- end loop --)
+
+ (--Hole #06 at angle 045.0deg --)
+  G01 Z0003.000 F120.0 
+  G01 X0007.071 Y0021.213 F100.0 
+  (-- start loop --)
+    (-- new Z -000.500 --) 
+    (drill)
+    G01 Z-000.500 F0120 
+    G04 P0.25 
+    (retraction)
+    G01 Z0000.500 F0200 
+
+  G00 Z0003.000 F0200 
+  (-- end loop --)
+
+(--- END DRILL HOLES ---)
+(HOMEING)
+G00 Z0010.000 F100.0 
+G00 X0000.000 Y0000.000 F200.0 
+
+(set general postamble)
+G00 Z10 F100 M2 
+
+
+%

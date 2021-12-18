@@ -1,0 +1,107 @@
+{% extends "base_nav.html" %}
+
+{% block styles %}
+
+<style type="text/css" media="screen">
+
+	.ace_editor {
+		border: 1px solid lightgray;
+		margin: auto;
+		height: 100%;
+		width: 30%;
+        word-wrap: break-word;
+	};
+
+    .ace_editor:hover .ace_scrollbar {
+        display: block;
+        opacity: 1;
+    };
+
+	.scrollmargin {
+		height: 80px;
+        text-align: left;
+	};
+</style>
+{% endblock %}
+
+{% block content %}
+<form action="#" class="form" role="form" method='POST'>
+
+    <div class="container">
+        <!-- save -->
+        <div class="row">
+            <div class="row">
+                <button class="btn waves-effect waves-light tooltipped" 
+                data-position="bottom" 
+                data-tooltip="{{_('download GCode to file')}}"
+                id="btn_save_gcode" 
+                type="submit" 
+                name="btn_save_gcode">{{_('Download GCode')}}
+            <i class="material-icons right">file_download</i>
+            </button>  
+        </div>
+        <!-- ACE Editor -->
+        <div class="row"></div>
+            <p>{{_('For help set cursor insode editor')}} - (Win) {{_('CTRL-ALT-h for help')}} - (Mac) {{_('CMD-ALT-h for help')}}</p>
+            <div class="gcode_editor">
+                <pre id="gcode_editor" name="gcode_editor" style="width: 100%;" class="scrollmargin">
+                {{data}}
+                </pre>
+                <div class="scrollmargin"></div>
+            </div>
+        </div>
+        <!-- save -->
+        <div class="row">
+            <div class="row">
+                <button class="btn waves-effect waves-light tooltipped" 
+                data-position="bottom" 
+                data-tooltip="{{_('download GCode to file')}}"
+                id="btn_save_gcode" 
+                type="submit" 
+                name="btn_save_gcode">{{_('Download GCode')}}
+            <i class="material-icons right">file_download</i>
+            </button>  
+        </div> 
+    </div>
+</form>
+
+{% endblock content %}
+
+{% block scripts %} 
+<script src="{{url_for('static', filename='js/ace/src-min-noconflict/ace.js')}}"  charset="utf-8"></script>
+<script>
+
+    var editor = ace.edit("gcode_editor", {
+//        theme: "{{url_for('static', filename='js/ace/theme/tomorrow_night_eighties')}}" ,
+//        theme: "ace/theme/tomorrow_night_eighties" ,
+        theme: "ace/theme/chrome" ,
+//        mode: "{{url_for('static', filename='js/ace/mode/gcode')}}" ,
+        mode: "ace/mode/gcode" ,
+        maxLines: 150,
+        wrap: true,
+        selectionStyle: "text",
+        setOptions: {opacity: 0, hScrollBarAlwaysVisible: false, vScrollBarAlwaysVisible: true},
+        setOptions: {'fontFamily': 'Courier New'},
+        autoScrollEditorIntoView: false
+    })
+
+    editor.commands.addCommand({
+        name: "showKeyboardShortcuts",
+        bindKey: {win: "Ctrl-Alt-h", mac: "Command-Alt-h"},
+        exec: function(editor) {
+            ace.config.loadModule("ace/ext/keybinding_menu", function(module) {
+                module.init(editor);
+                editor.showKeyboardShortcuts()
+            })
+        }
+    });
+    //editor.execCommand("showKeyboardShortcuts");
+
+    editor.renderer.setScrollMargin(10, 10, 10, 10);
+
+    editor.setFontSize(14);
+
+
+
+</script>
+{% endblock %}

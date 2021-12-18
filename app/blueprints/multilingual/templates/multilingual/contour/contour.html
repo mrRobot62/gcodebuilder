@@ -1,0 +1,91 @@
+{% extends "base_nav.html" %}
+
+{% block content %} 
+<h4>{{_('CNC Contour-Generators')}}</h4>
+<hr>
+
+<div class="container">
+   <div class="row">
+      <!-- Circle -->
+      <div class="col s12 m6 l3">
+         <div class="card blue-grey lighten-4 medium">
+            <div class="card-image">
+               <img class="responsive-img" src="{{url_for('static', filename='images/contour/circle02.png')}}" height="65" width="65">
+            </div>
+            <div class="card-content">
+               <span class="card-title">{{_('Circle 360')}}</span>
+               <p>{{_('Milling a 360deg circle with diameter D')}}</p>
+            </div>
+            <div class="card-action">
+               <a class="right blue-grey-text" href="{{url_for('multilingual.circle360')}}">
+                  <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">play_circle_filled</i></button>
+               </a>
+            </div>
+         </div>
+      </div>
+      <!--  -->
+      <div class="col s12 m6 l3">
+         <div class="card blue-grey lighten-4 medium">
+            <div class="card-image">
+               <img class="responsive-img" src="{{url_for('static', filename='images/contour/circlearc02.png')}}" height="65" width="65">
+            </div>
+            <div class="card-content">
+               <span class="card-title">{{_('Circle arc')}}</span>
+               <p>{{_('Milling a circle arc with an angle w and an radius R')}}</p>
+            </div>
+            <div class="card-action">
+               <a class="right blue-grey-text" href="{{url_for('multilingual.circlearc')}}">
+                  <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">play_circle_filled</i></button>
+               </a>
+            </div>
+         </div>
+      </div>
+
+      <!-- Rectangle -->
+      <div class="col s12 m6 l3">
+         <div class="card blue-grey lighten-4 medium">
+            <div class="card-image">
+               <img class="responsive-img" src="{{url_for('static', filename='images/contour/rectangle01.png')}}" height="65" width="65">
+            </div>
+            <div class="card-content">
+               <span class="card-title">{{_('Rectangle')}}</span>
+               <p>{{_('Milling a rectangle a x b')}}</p>
+            </div>
+            <div class="card-action">
+               <a class="right blue-grey-text" href="{{url_for('multilingual.rectangle')}}">
+                  <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">play_circle_filled</i></button>
+               </a>
+            </div>
+         </div>
+      </div>   
+      <!--  -->
+      <div class="col s12 m6 l3">
+         <div class="card blue-grey lighten-4 medium">
+            <div class="card-image">
+               <img class="responsive-img" src="{{url_for('static', filename='images/contour/rectanglerounded01.png')}}" height="65" width="65">
+            </div>
+            <div class="card-content">
+               <span class="card-title">{{_('Rounded Rectangle')}}</span>
+               <p>{{_('Milling a rounded rectangel a x b with edge radius R')}}</p>
+            </div>
+            <div class="card-action">
+               <a class="right blue-grey-text" href="{{url_for('multilingual.rectanglerounded')}}">
+                  <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">play_circle_filled</i></button>
+               </a>
+            </div>
+         </div>
+      </div>   
+   </div>
+   <div class="row">
+      <!-- Triangle -->
+   </div>
+   <div class="row">
+      <!-- Hexagon -->
+      
+   </div>
+   <div class="row">
+      <!-- Polygon -->
+      
+   </div></div>
+{% endblock content  %}
+

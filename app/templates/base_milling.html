@@ -1,0 +1,294 @@
+{% include "base_nav.html" %}
+
+{% block content %}
+
+<!-- Data/Content container -->
+
+<div class="container">
+   <!-- Image section -->
+   <div class="divider"></div>
+   <div class="section">
+      {% block image %} {% endblock %}
+   </div>
+   <form action="#" class="form" role="form" method='POST'>
+  
+      <!-- collapse Pre- Post GCode stuff -->
+      <ul class="collapsible s12" data-collapsible="expandable">
+         <li>
+            <div class="collapsible-header tooltipped" 
+                  data-position="top" 
+                  data-tooltip="{{_('Define GCode sequences for Pre- or post milling')}}">
+                  <i class="material-icons">filter_1</i>{{_('Pre & Post Parameters')}}
+               <span class="badge">2</span>
+            </div>
+            <div class="collapsible-body">
+               <div class="row">
+                  <div class="input-field col s6 m6" >
+                     <textarea required value="{{data['pre_gcode']}}" placeholder="{{_('Please insert Pre-GCode')}}" id="pre_gcode" name="pre_gcode"class="materialize-textarea validate">{{data['pre_gcode']}}</textarea>
+                     <label class="active" for="pre_gcode">Pre-GCode</label>
+                  </div>
+                  <div class="input-field col s6 m6">
+                     <textarea required value="{{data['post_gcode']}}" placeholder="{{_('Please insert Post-GCode')}}"id="post_gcode" name="post_gcode"class="materialize-textarea validate">{{data['post_gcode']}}</textarea>
+                     <label class="active" for="post_gcode">Post-GCode</label>
+                  </div>
+               </div>   
+            </div>
+         </li>
+      </ul>
+      <!-- collapse Milling parameters -->
+      <ul class="collapsible s12" data-collapsible="expandable">
+         <i class="tiny material-icons prefix" id="collapse_milling">adjust</i>
+         <li>
+            <div class="collapsible-header tooltipped" 
+            data-position="top" 
+            data-tooltip="{{_('define standard milling params independend of object')}}"><i class="material-icons">filter_2</i>{{_('Standard Milling Parameters')}}
+               <span class="badge">4</span>
+            </div>
+            <div class="collapsible-body">
+               <div class="row">
+                  <!-- define center or start (x=0, y=0) pointer to start milling -->
+                  <div class="input-field col s6 m6">
+                     <select class="validate" id="center_point" name="center_point" onchange='ChangeCenterPoint();'>
+                        <option value="" disabled selected>{{_('Choose your start point')}}</option>
+                        {% for k in data["cp"] %}
+                           {% if data["cp"][k] %}
+                              <option selected value={{k}}>{{_('Center point of cutter')}} {{k}}</option>
+                           {% else %} 
+                              <option value={{k}}>{{_('Center point of cutter')}} {{k}}</option>
+                           {% endif %}
+                        {% endfor %}         
+                     </select>
+                  <label class="tooltipped" data-position="bottom" data-tooltip="{{_('Origin starting point for cutter')}}">{{_('Start center point of cutter')}}</label>
+                  <!-- this container is filled by javascript if user change center to 0 -->
+                  <div class="center_point_xy" id="center_point_xy"></div>
+                  </div>   
+                  <!-- define measurment unit, default is metric mm -->
+                  <div class="input-field col s6 m6">
+                     <select name="unit">
+                        <option value="" disabled selected>{{_('Choose your unit')}}</option>
+                        {% for k in data["unit"] %}
+                           {% if data["unit"][k] %}
+                              <option selected value={{k}}>{{k}}</option>
+                           {% else %} 
+                              <option value={{k}}>{{k}}</option>
+                           {% endif %}
+                        {% endfor %}
+                     </select>      
+                     <label>Unit</label>
+                  </div>               </div>
+               <!-- dynamic filled container ! -->       
+               <div class="row">
+                  <!-- define milling direction, default ist CCW (milling to left)-->
+                  <div class="input-field col s6 m6">
+                     <select name="direction">
+                        <option value="" disabled selected>{{_('Choose your direction')}}</option>
+                        {% for k in data["dir"] %}
+                           {% if data["dir"][k] %}
+                              <option selected value={{k}}>{{k}}</option>
+                           {% else %} 
+                              <option value={{k}}>{{k}}</option>
+                           {% endif %}
+                        {% endfor %}
+                     </select>      
+                     <label class="tooltipped" 
+                           data-position="bottom" 
+                           data-tooltip="{{_('Movement is clockwise or counter clockwise')}}">{{_('Moving direction')}}</label>
+                  </div> 
+         
+                  <!-- define if milling is on contour, leftside or rightside from contour -->
+                  <div class="input-field col s6 m6">
+                     <select name="cutter_compensation">
+                        <option value="" disabled selected>{{_('Cutter compensation')}}</option>
+                        {% for k in data["move"] %}
+                           {% if data["move"][k] == 0 %}
+                              <option selected value={{k}}>{{k}}</option>
+                           {% else %} 
+                              <option value={{k}}>{{k}}</option>
+                           {% endif %}
+                        {% endfor %}
+                     </select>      
+                     <label class="tooltipped" 
+                           data-position="bottom" 
+                           data-tooltip="{{_('Tool is on contour, inside or outside of contour')}}">{{_('Kind of cutter compensation')}}</label>
+                  </div> 
+               </div>  
+               <!-- milling depth -->    
+               <div class="row">
+                  <!-- Depth per step -->
+                  <div class="input-field col s6 m6">
+                     <input required type="number" min="0.0" max="10.0" step="0.001" placeholder="{{_('typical values are 0.5, 1.0, 1.5, ...')}}" value="{{data['depth_step']}}" name="depth_step" id="depth_step" class="materialize-input validate"></input>
+                     <label class="active" for="depth_step">{{_('Depth per step')}}</label>
+                     <span class="helper-text" data-error="{{_('only positive number gt 0 is allowed')}}" ></span>
+                  </div>            
+                  <!-- Total depth -->
+                  <div class="input-field col s6 m6 ">                     
+                     <input required type="number" min="0.0" max="999.0" step="0.001" placeholder="{{_('Max depth to mill')}}" value="{{data['depth_total']}}" name="depth_total" id="depth_total" class="materialize-input validate"></input>
+                     <label class="active" for="depth_total">{{_('Depth total')}}</label>
+                     <span class="helper-text" data-error="{{_('only positive number gt 0 is allowed')}}" ></span>
+                  </div>                         
+               </div>   
+               <!-- milling speed -->   
+               <div class="row">
+                  <!-- speed for rapid move x/y axis  -->
+                  <div class="input-field col s6 m6">
+                     <input required type="number" min="0" max="9999" placeholder="{{_('Travel speed for X/Y axis')}}" value="{{data['feed_g00_xy']}}" name="feed_g00_xy" id="feed_g00_xy" class="materialize-input  validate"></input>
+                     <label class="active" for="feed_g00_xy">{{_('Feed Rapid X/Y')}}</label>
+                     <span class="helper-text" data-error="{{_('only positive number gt 0 is allowed')}}" ></span>
+                  </div>            
+                  <!-- speed rapid move z-axis -->
+                  <div class="input-field col s6 m6">
+                     <input required type="number" min="0" max="999" placeholder="{{_('Travel speed for Z axis')}}" value="{{data['feed_g00_z']}}" name="feed_g00_z" id="feed_g00_z" class="materialize-input validate"></input>
+                     <label class="active" for="feed_g00_z">{{_('Feed Rapid Z')}}</label>
+                     <span class="helper-text" data-error="{{_('only positive number gt 0 is allowed')}}" ></span>
+                  </div>                         
+                  <!-- speed for linear move x/y axis  -->
+                  <div class="input-field col s6 m6">
+                     <input required type="number" min="0" max="9999" placeholder="{{_('Cutting speed value for X/Y axis')}}" value="{{data['feed_g01_xy']}}" name="feed_g01_xy" id="feed_g01_xy" class="materialize-input validate"></input>
+                     <label class="active" for="feed_g01_xy">{{_('Feed Linear X/Y')}}</label>
+                     <span class="helper-text" data-error="{{_('only positive number gt 0 is allowed')}}" ></span>
+                  </div>            
+                  <!-- speed linear move Z -axis -->
+                  <div class="input-field col s6 m6">
+                     <input required type="number" min="0" max="9999" placeholder="{{_('Cutting speed value for Z axis')}}" value="{{data['feed_g01_z']}}" name="feed_g01_z" id="feed_g01_z" class="materialize-input validate"></input>
+                     <label class="active" for="feed_g01_z">{{_('Feed Linear Z')}}</label>
+                     <span class="helper-text" data-error="{{_('only positive number gt 0 is allowed')}}" ></span>
+                  </div> 
+               </div>  
+               <!-- Start/End Z-Hight-->
+               <div class="row">
+                  <!-- z_start -->
+                  <div class="input-field col s6 m6">
+                     <input required type="number" min="0.0" max="99.0" step="0.1" placeholder="{{_('Enter hight for Z before starting')}}" value="{{data['z_start']}}" name="z_start" id="z_start" class="materialize-input  validate"></input>
+                     <label class="active" for="z_start">{{_('Start Z-Height')}}</label>
+                     <span class="helper-text" data-error="{{_('only positive number gt 0 is allowed')}}" ></span>
+                  </div>            
+                  <!-- z_safety -->
+                  <div class="input-field col s6 m6">
+                     <input required type="number" min="0.0" max="99.0" step="0.1" placeholder="{{_('Enter saftey hight for Z after milling')}}" value="{{data['z_safety']}}" name="z_safety" id="z_safety" class="materialize-input validate"></input>
+                     <label class="active" for="z_safety">{{_('Saftey Z-Height')}}</label>
+                     <span class="helper-text" data-error="{{_('only positive number gt 0 is allowed')}}" ></span>
+                  </div>                         
+               </div>  
+            </div>
+         </li>
+      </ul>
+      <!-- select material & tool -->
+      <ul class="collapsible" data-collapsible="expandable">
+            <li>
+               <i class="tiny material-icons prefix">adjust</i>
+               <div class="collapsible-header"><i class="material-icons">filter_3</i>Material & Tool
+                  <span class="badge">2</span>
+               </div>
+                  <div class="collapsible-body">
+                     <!-- Material and cutter parameters -->
+                     <div class="row">
+                        <!-- choose material -->
+                        <div class="input-field col s6 m6">
+                           <select class="validate">
+                              <option value="" disabled selected>Choose your material</option>
+                              {% for k in material %}
+                                 {% if material[k] %}
+                                    <option selected value={{k}}>{{k}}</option>
+                                 {% else %} 
+                                    <option value={{k}}>{{k}}</option>
+                                 {% endif %}
+                              {% endfor %}
+                           </select>      
+                           <label>Material</label>
+                        </div> 
+                     </div>
+                     <div class="row">
+
+                        <!-- set tool/cutter diameter -->
+                        <div class="input-field col s6 m6">
+                           <input required type="number" min="0.1" max="99.0" step="0.1" placeholder="{{_('Set your cutter diameter')}}" value="{{data['tool_dia']}}" name="tool_dia" id="tool_dia" class="materialize-input validate"></input>
+                           <label class="active" for="tool_dia">{{_('Set your cutter diameter')}}</label>
+                           <span class="helper-text" data-error="{{_('only positive number gt 1.0   is allowed')}}" ></span>
+                        </div>                           
+                        <div class="input-field col s6 m6">
+                           <input required type="number" min="0" max="99" step="1" placeholder="{{_('Set your tool id')}}" value="{{data['tool_id']}}" name="tool_id" id="tool_id" class="materialize-input validate"></input>
+                           <label class="active" for="tool_id">{{_('Set your tool id')}}</label>
+                           <span class="helper-text" data-error="{{_('only positive number from 0 to 99 are allowed')}}" ></span>
+                        </div>                        
+                        <div class="input-field col s6 m6">
+                           <input required type="number" min="0" max="30000" step="1000" placeholder="{{_('Set your spindle speed')}}" value="{{data['speed']}}" name="speed" id="speed" class="materialize-input validate"></input>
+                           <label class="active" for="speed">{{_('Set your spindle speed')}}</label>
+                           <span class="helper-text" data-error="{{_('only positive number from 0 to 30000 are allowed')}}" ></span>
+                        </div>                        </div>
+                     <div class="row">
+                        <h5>{{_('Recommended parameters')}}</h5>
+                        <p>{{_('Due to your individuell machine parameters, feed rate, infeed rate and your used spindle this recommendatoins maybe not be optimized for your setup')}}</p>
+                        <table class="centered">
+                           <thead>
+                              <tr>
+                                 <th>ToolID</th>
+                                 <th>{{_('Tool')}}</th>
+                                 <th>{{_('Tool diameter')}}</th>
+                                 <th>{{_('Feed rate <br>mm/min')}}</th>
+                                 <th>{{_('Infeed rate <br>mm/min')}}</th>
+                                 <th>{{_('Spindel-RPM <br>min')}}</th>
+                                 <th>{{_('Spindel-RPM <br>max')}}</th>
+                                 <th>{{_('Spindel')}}</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>x</td>
+                                 <td>x</td>
+                                 <td>x</td>
+                                 <td>x</td>
+                                 <td>x</td>
+                                 <td>x</td>
+                                 <td>x</td>
+                                 <td>x</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+               </div>
+            </li>
+      </ul>
+      <!-- collapse geometrical specific fields-->
+      <ul class="collapsible" data-collapsible="expandable">
+         <i class="tiny material-icons prefix" >adjust</i>
+         <li>
+            <div class="collapsible-header"><i class="material-icons">filter_4</i>{{_('Specific object parameter')}}</div>
+            <div class="collapsible-body">
+               {% block gemetrical_parameters %}{% endblock %}
+            </div>
+         </li>
+      </ul>
+
+      <!-- Buttons -->
+      <div class="devider"></div>
+      <div class="section">
+         <!-- Modal Trigger -->
+
+         <button class="btn waves-effect waves-light tooltipped"
+                  data-position="bottom" 
+                  data-tooltip="{{_('Generate GCode and show code')}}"
+                  id="btn_gen_gcode" 
+                  type="submit"
+                  name="btn_gen_gcode">{{_('Generate GCode')}}
+            <i class="material-icons right">send</i>
+         </button>
+      </div>
+
+      <!-- Modal Structure -->
+      <div id="gcode_modal" name="gcode_modal" class="modal modal-fixed-footer">
+         <div class="modal-content">
+            <h4>{{data.title}}</h4>
+            <p>{{data.content}}</p>
+         </div>
+         <div class="modal-footer">
+            <a href="#!" name="btn_gcode_modal" type="submit" class="modal-close waves-effect waves-green btn-flat">{{_('Close')}}</a>
+         </div>
+      </div>
+</form>
+
+</div>
+
+{% endblock %}
+
+
+
