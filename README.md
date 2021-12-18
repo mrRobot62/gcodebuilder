@@ -41,6 +41,15 @@ some screenshots
 ### Contour Circles
 <img width="1437" alt="overview_contour_circle" src="https://user-images.githubusercontent.com/949032/146629834-dcc60088-8a33-415e-a087-e34aa462993d.png">
 
+<img width="1016" alt="overview_std_prepost" src="https://user-images.githubusercontent.com/949032/146629995-2e783041-9b4f-42e6-93c0-49f172c374d2.png">
+
+<img width="1016" alt="overview_std_params" src="https://user-images.githubusercontent.com/949032/146630008-eb49183e-7db2-4f03-ba61-dce752138771.png">
+
+<img width="1016" alt="overview_std_material" src="https://user-images.githubusercontent.com/949032/146630014-b0c6fed5-af6c-43f1-a153-d5b4bacd6179.png">
+
+<img width="1016" alt="overview_std_specific_arc" src="https://user-images.githubusercontent.com/949032/146630016-948c0170-4952-4f5c-9f55-5b77a7a0f518.png">
+
+
 ### Generated GCode
 <img width="1437" alt="overview_gcode" src="https://user-images.githubusercontent.com/949032/146629846-98f356c7-69ee-4a1c-8c75-ae19af0e32aa.png">
 
