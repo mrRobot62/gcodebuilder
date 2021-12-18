@@ -1,5 +1,25 @@
-# GCodeGenerator2
- 
+# GCodeGenerator2 / GCode-Builder
+ unde
+ # Abstract
+This web based tool suite create a couple of different gcode squences like
+* Contour-Tools
+    * Milling circles
+    * Milling arcs 
+    * Milling rectangles
+    * Milling rounded rectangles
+* Pockets
+    * Milling circle pockets
+    * Milling rectangle pockets
+* Slots
+    * Milling slots
+* Surface
+    * plan surface
+
+## Quick Overview
+
+
+## Deepe Dive
+see wiki
 
 
 # Development
