@@ -2,7 +2,7 @@
  !!!!! under construction !!!!
  
  Initial version (V01) generate GCode for  
- * Language English/German
+ * Muliti languagulal (currently english/german)
  * milling contour circels
  * milling contour circel arcs
  * milling rectangles
@@ -17,17 +17,23 @@
  # Abstract
 This web based tool suite create a couple of different gcode squences like
 * Contour-Tools
-    * Milling circles
-    * Milling arcs 
-    * Milling rectangles
+    * Milling circles (available in 0.1)
+    * Milling arcs (0.1)
+    * Milling rectangles (0.1)
     * Milling rounded rectangles
 * Pockets
     * Milling circle pockets
     * Milling rectangle pockets
 * Slots
-    * Milling slots
+    * Milling slots linear
+    * Milling slots curved
 * Surface
     * plan surface
+* Drilling
+    * single hole
+    * multiple holes in rows/cols/anglee
+    * plan surface
+
 
 ## Quick Overview
 some screenshots
