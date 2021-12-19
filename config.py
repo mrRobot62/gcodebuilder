@@ -6,6 +6,10 @@ class Config(object):
     MAX_LINE_WIDTH = 80
     GCODES = {
             "arc_int_cw"        : "G2 X{x} Y{y} I{i} J{j}",
+            "arc_int_cw_xyi"     : "G2 X{x} Y{y} I{i}",
+            "arc_int_cw_xyiz"    : "G2 X{x} Y{y} I{i} Z{z}",
+            "arc_int_cw_xyj"     : "G2 X{x} Y{y} J{j}",
+            "arc_int_cw_xyjz"     : "G2 X{x} Y{y} J{j} Z{z}",
             "arc_int_cw_ijz"     : "G2 I{i} J{j} Z{z}",
             "arc_int_ccw_ijz"    : "G3 I{i} J{j} Z{z}",
 

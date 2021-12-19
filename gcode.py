@@ -174,6 +174,29 @@ class GCode(ABC):
             tool_comp (int): radius of tool_diameter
             range (array): list of z depth 
         """
+
+
+        # save data into variables which are mostly used in sub classes
+        # below variables are standard variables in all milling projects
+        self.center_offset_x = 0    #
+        self.center_offset_y = 0    # only used, if user set center point to 0
+        self.contour        = data['cutter_compensation']
+        self.cp             = data['center_point']
+        self.data           = data 
+        self.depth_total    = float(data['depth_total'])
+        self.depth_step     = float(data['depth_step'])
+        self.dir            = data['direction']
+        self.lin_move_xy    = float(data['feed_g01_xy'])
+        self.lin_move_z     = float(data['feed_g01_z'])
+        self.rapid_move_xy  = float(data['feed_g00_xy'])
+        self.rapid_move_z   = float(data['feed_g01_z'])
+        self.speed          = int(data['speed'])
+        self.unit           = data['unit']
+        self.tool_dia       = float(data['tool_dia'])
+        self.tool_id        = int(data['tool_id'])
+        self.z_safety       = float(data['z_safety'])
+        self.z_start        = float(data['z_start'])
+
         xy = [0,0]
         comment_width = self._cfg.MAX_LINE_WIDTH - 2
         self.addComment("".ljust(comment_width,'*'))
@@ -214,29 +237,14 @@ class GCode(ABC):
                 msg = comment.format(*args)
                 self.addComment(msg, leadingBlank=True, endingBlank=True)
                 pass
+
+        # default comment in all milling projects
+        args = [self.contour, self.depth_total, self.depth_step]
+        comment = 'Milling contour {0}, total depth {1} and a depth step {2}'
+        msg = comment.format(*args)
+        self.addComment(msg, leadingBlank=True, endingBlank=True)
+
         self.addComment("".ljust(comment_width,'*'))
-
-        # save data into variables which are mostly used in sub classes
-        # below variables are standard variables in all milling projects
-        self.center_offset_x = 0    #
-        self.center_offset_y = 0    # only used, if user set center point to 0
-        self.contour        = data['cutter_compensation']
-        self.cp             = data['center_point']
-        self.data           = data 
-        self.depth_total    = float(data['depth_total'])
-        self.depth_step     = float(data['depth_step'])
-        self.dir            = data['direction']
-        self.lin_move_xy    = float(data['feed_g01_xy'])
-        self.lin_move_z     = float(data['feed_g01_z'])
-        self.rapid_move_xy  = float(data['feed_g00_xy'])
-        self.rapid_move_z   = float(data['feed_g01_z'])
-        self.speed          = int(data['speed'])
-        self.unit           = data['unit']
-        self.tool_dia       = float(data['tool_dia'])
-        self.tool_id        = int(data['tool_id'])
-        self.z_safety       = float(data['z_safety'])
-        self.z_start        = float(data['z_start'])
-
         depth_range = np.arange(0.0, (self.depth_total + self.depth_step), self.depth_step)
         self.addPreamble(data['pre_gcode'])
 
@@ -308,54 +316,3 @@ class GCode(ABC):
             return self._cfg.GC_SNIPPETS[snippet]
         else:
             return None
-
-
-#----------------------------------------------------------------------------------------------
-# SubClasses for milling
-#----------------------------------------------------------------------------------------------
-
-class GCode_template(GCode):
-    """ create a sharp cornerd rectangle """
- 
-    def __init__ (self, cfg, version="GCode_Contour_Circle V0.1"):
-        super().__init__(cfg, version)
-
-    def generateGcode(self, data):
- 
-        cp          = data['center_point']
-        dir         = data['direction']
-        speed       = data['speed']
-        unit        = data['unit']
-        contour     = data['cutter_compensation']
-        depth       = data['depth_total']
-        depth_step  = data['depth_step']
-
-        width = data['width']
-        height = data['height']
-
-        xy = [0,0]
-        (xy, tool_comp, range) = self.addStandardGCodes(
-            data,
-            comments= {
-                "intro" : {
-                    "text" : 'GCode_Contour_Rectangle. Version {0} - {1}',
-                    "args" : [
-                        "V0.1", 
-                        "12-2021"
-                        ]
-                },
-                "c1" : {
-                    "text" : 'Rectangle with a width of {0} and a height of {2}{1}, milling contour {3}, cutting direction {3}',
-                    "args" : [
-                        width, 
-                        unit , 
-                        height,
-                        contour,
-                        dir
-                        ]
-                }
-            }
-        )
-
-    pass
-pass

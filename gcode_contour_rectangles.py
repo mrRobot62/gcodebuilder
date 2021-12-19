@@ -1,5 +1,7 @@
 from gcode import GCode, UnseenFormatter
 
+import numpy as np
+
 class GCode_Contour_Rectangle(GCode):
     """ create a sharp cornerd rectangle """
  
@@ -200,22 +202,55 @@ class GCode_Contour_RoundedRectangle(GCode):
         x = round(float(x),4)
         y = round(float(y),4)
 
-        z_offset = [0,0,0,0]
+        z_offset = [0,0,0,0,0,0,0,0]
         z = depth[0]
         if depth[1] - depth[0] <= 0.0:
-            z_offset = [depth[1],depth[1],depth[1],depth[1]]
+            z_offset = [depth[1],depth[1],depth[1],depth[1],depth[1],depth[1],depth[1],depth[1]]
         elif helical and depth[1] > 0.0:
-            o = (depth[1]-depth[0]) / 4.0
+            o = (depth[1]-depth[0]) / 8.0
             z_offset = np.arange (start=depth[0]+o,stop=depth[1], step=o)
             z_offset = np.append(z_offset, depth[1])  
         
-        self.addGCode(self._cfg.GCODES['lin_move_xyzf'], args={'x':f"{x:.4f}",  'y':f"{(y+h):.4f}", 'z':f"{-z_offset[0]:.4f}", 'feed': f}, indent=indent )
-        self.addGCode(self._cfg.GCODES['lin_move_xyzf'], args={'x':f"{x+w:.4f}",'y':f"{(y+h):.4f}", 'z':f"{-z_offset[1]:.4f}", 'feed': f}, indent=indent )
-        self.addGCode(self._cfg.GCODES['lin_move_xyzf'], args={'x':f"{x+w:.4f}",'y':f"{(y):.4f}",   'z':f"{-z_offset[2]:.4f}", 'feed': f}, indent=indent )
-        self.addGCode(self._cfg.GCODES['lin_move_xyzf'], args={'x':f"{x:.4f}",  'y':f"{(y):.4f}",   'z':f"{-z_offset[3]:.4f}", 'feed': f}, indent=indent )
+        # start point 
+        
+        self.addGCode(self._cfg.GCODES['lin_move_xyzf'],    args={'x':f"{x:.4f}",       'y':f"{y:.4f}", 
+            'z':f"{-z_offset[0]:.4f}", 'feed': f}, indent=indent )
+        # 1. edge lower left; positiv I<value>
+        x = w / 2.0
+        y = h / 2.0 - r
+        self.addGCode(self._cfg.GCODES['arc_int_cw_xyjz'],  args={'x':f"{-x:.4f}",      'y':f"{-y:.4f}", 
+            'j':f"{abs(r):.4f}", 'z':f"{-z_offset[0]:.4f}"}, indent=indent )
+        # 2. G01
+        self.addGCode(self._cfg.GCODES['lin_move_xyz'],     args={'x':f"{-x:.4f}",      'y':f"{abs(y):.4f}", 
+            'z':f"{-z_offset[1]:.4f}"}, indent=indent )
+        # 3. G02 edge upper left
+        x = w / 2.0 - r 
+        y = h / 2.0
+        self.addGCode(self._cfg.GCODES['arc_int_cw_xyiz'],  args={'x':f"{-x:.4f}",      'y':f"{abs(y):.4f}", 
+            'i':f"{abs(r):.4f}", 'z':f"{-z_offset[2]:.4f}"}, indent=indent )
+        # 4. G01
+        self.addGCode(self._cfg.GCODES['lin_move_xyz'],     args={'x':f"{abs(x):.4f}",  'y':f"{abs(y):.4f}", 
+            'z':f"{-z_offset[3]:.4f}"}, indent=indent )
+        # 5. G02 edge upper right
+        x = w / 2.0
+        y = h / 2.0 - r
+        self.addGCode(self._cfg.GCODES['arc_int_cw_xyjz'],  args={'x':f"{x:.4f}",       'y':f"{y:.4f}", 
+            'j':f"{-r:.4f}", 'z':f"{-z_offset[4]:.4f}"}, indent=indent )
+        # 6. G01
+        self.addGCode(self._cfg.GCODES['lin_move_xyz'],     args={'x':f"{abs(x):.4f}",  'y':f"{-y:.4f}", 
+            'z':f"{-z_offset[5]:.4f}"}, indent=indent )
+        # 7. G02 edge lower right
+        x = w / 2 - r
+        y = h / 2 
+        self.addGCode(self._cfg.GCODES['arc_int_cw_xyiz'],  args={'x':f"{x:.4f}",       'y':f"{-y:.4f}", 
+            'i':f"{-r:.4f}", 'z':f"{-z_offset[6]:.4f}"}, indent=indent )
+        # 8. G01
+        self.addGCode(self._cfg.GCODES['lin_move_xyz'],     args={'x':f"{-x:.4f}",      'y':f"{-y:.4f}", 
+            'z':f"{-z_offset[7]:.4f}"}, indent=indent )
+
 
     @staticmethod
-    def helicalRecHole(self, xy, ab, wh, td, f, depth, contour='on', dir='CW'):
+    def helicalRoundedRecHole(self, xy, ab, wh, td, r, f, depth, contour='on', dir='CW'):
         """
         cut a rectangle hole with a width(w) and height(h). XY is the lower left corner to start
 
@@ -224,6 +259,7 @@ class GCode_Contour_RoundedRectangle(GCode):
             ab (float tuple): (distance from 0,0 to cp 2, only used if cp = 0)
             wh ([float tuple]): [(width, height)]
             td ([float]): [tool diameter]
+            r ([float]): [edge radius]
             f ([int]): [feed/speed]
             cp ([int]):  [center point (0,1,2)]
             depth (float tuple) : (depth_total, depth_step)
@@ -232,18 +268,28 @@ class GCode_Contour_RoundedRectangle(GCode):
         """
         # Step 1: starting xy position is allways lower left corner
         #
+        # Math
+        # a = width, b=height, r=radius
+        # Example a=10, b=6, r=2.8)
+        # ( x= b/2-r  => x = 6 / 2 = 3 - 2.8 = 0.2 )
+        # ( G01 X0.2 Y....)
+        # ( y= a/2-r  => y = 10 / 2 = 5 - 2.8 = 2.2 )
+        # G02 X0.2 Y2.2
+
+
         if self.cp == '0' :
             # cutter is on machines 0/0 position
             xy[0] += ab[0]
             xy[1] += ab[1]
         elif self.cp == '1':
             # center of rectangle
-            xy[0] -= (wh[0] / 2)
+            xy[0] -= (wh[0] / 2) - r
             xy[1] -= (wh[1] / 2)
+
 
         dr = self.getDepthStepRangeArray(depth)
 
-        comment = f"-- helical rectangle start --"
+        comment = f"-- helical rounded rectangle start --"
         last_z = 0
         self.addComment(comment, leadingBlank=True, endingBlank=True)  
 
@@ -265,6 +311,7 @@ class GCode_Contour_RoundedRectangle(GCode):
 
         pass
 
+
         #
         # (loop)
         self.addGCode(self._cfg.GCODES['spindle_cw'])
@@ -275,6 +322,8 @@ class GCode_Contour_RoundedRectangle(GCode):
         self.addComment(comment, leadingBlank=True, endingBlank=True)  
         #
         # Go to start position 
+
+
         self.addGCode(self._cfg.GCODES['rapid_move_zf'], args={'z':self.z_safety, 'feed':self.rapid_move_z})
         self.addGCode(self._cfg.GCODES['rapid_move_xyf'],args={'x':xy[0],  'y':xy[1], 'feed':self.rapid_move_xy})
         #
@@ -283,13 +332,13 @@ class GCode_Contour_RoundedRectangle(GCode):
 
         comment = f"-- loop --"
         self.addComment(comment, leadingBlank=True, endingBlank=True)  
+
         last_z = 0
-        self.addGCode(self._cfg.GCODES['lin_move_xyzf'],args={'x':xy[0], 'y':xy[1], 'z':-0, 'feed': self.lin_move_xy}, indent=3 )
         for z in dr:
             comment = f"-- depth {z} --"
             self.addComment(comment, leadingBlank=True, endingBlank=True)  
             if self.dir == 'CW':
-                self.createRoundedRectangle(self, x=xy[0], y=xy[1], depth=[last_z, z, self.depth_step], w=wh[0], h=wh[1], f=f, indent=3)
+                self.createRoundedRectangle(self, x=xy[0], y=xy[1], depth=[last_z, z, self.depth_step], w=wh[0], h=wh[1], r=r, f=f, indent=3)
             last_z = z
             pass
         comment = f"-- endloop --"
@@ -338,20 +387,12 @@ class GCode_Contour_RoundedRectangle(GCode):
                         height,
                         radius
                         ]
-                },
-                "c2" : {
-                    "text" : 'Milling contour {0}, total depth {1} and a depth step {2}',
-                    "args" : [
-                        self.contour,
-                        self.depth_total,
-                        self.depth_step
-                        ]
                 }
             }
         )
 
         # call static method, note: it's important to send current object as well to method
-        self.helicalRecHole( self,
+        self.helicalRoundedRecHole( self,
             xy=xy, 
             ab=[self.center_offset_x, self.center_offset_y],
             wh=[width, height],
