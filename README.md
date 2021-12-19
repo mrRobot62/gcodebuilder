@@ -39,7 +39,9 @@ This web based tool suite create a couple of different gcode squences like
 some screenshots
 
 ### Overview
-[]<img width="1437" alt="overview1" src="https://user-images.githubusercontent.com/949032/146629773-8bb1376d-4f1f-4eed-8d5c-85e725da2468.png">
+Example screenshots
+
+<img width="1437" alt="overview1" src="https://user-images.githubusercontent.com/949032/146629773-8bb1376d-4f1f-4eed-8d5c-85e725da2468.png">
 
 ### Contour milling
 <img width="1437" alt="overview_contour" src="https://user-images.githubusercontent.com/949032/146629823-0e739bea-b456-489a-9e13-7b5b233c4967.png">
