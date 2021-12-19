@@ -62,7 +62,7 @@ Example screenshots
 <img width="1437" alt="overview_gcode" src="https://user-images.githubusercontent.com/949032/146629846-98f356c7-69ee-4a1c-8c75-ae19af0e32aa.png">
 
 
-## Deepe Dive
+## Deep Dive
 see wiki
 
 
